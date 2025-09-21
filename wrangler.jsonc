@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "smartcard-d1-api",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "smartcarddev",
+          "database_id": "d5ced4cb-f441-495e-b981-7088c08b301b"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "548e91f5e4ff40cd97cb4405519e9f91",
+            "binding": "SECRET",
+            "secret_name": "NAMESPACE-ID-AUDIOUPLOAD"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
